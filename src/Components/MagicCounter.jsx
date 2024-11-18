@@ -13,6 +13,12 @@ export default function MagicCounter() {
         }
     };
 
+    const handleClickReset = () => {
+        if (count >= 1) {
+            setCount(0);
+        }
+    };
+
     const isMagic = count % 5 === 0;
 
     return (
@@ -36,6 +42,15 @@ export default function MagicCounter() {
                 >
                     +
                 </button>
+
+                {count >= 1 && (
+                    <button
+                        onClick={handleClickReset}
+                        className="bg-blue-500 text-white p-2 rounded-md w-20 ml-8"
+                    >
+                        Reset
+                    </button>
+                )}
             </div>
 
             {count > 1 && isMagic && (
