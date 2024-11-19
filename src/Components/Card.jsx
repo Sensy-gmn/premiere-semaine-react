@@ -8,7 +8,7 @@ export default function Card() {
     };
 
     return (
-        <div className="border border-gray-300 rounded-md p-4 ">
+        <>
             <button
                 onClick={handleClick}
                 className="bg-blue-500 text-white p-2 rounded-md"
@@ -16,6 +16,6 @@ export default function Card() {
                 Increment de 1
             </button>
             <p>la valeur de count est {count}</p>
-        </div>
+        </>
     );
 }

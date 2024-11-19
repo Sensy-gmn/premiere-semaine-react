@@ -3,7 +3,7 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { routesToDisplay } from "./routes";
 
-export default function App() {
+function App() {
     return (
         <>
             <Navbar />
