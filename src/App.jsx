@@ -1,15 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import { routes } from "./routes";
+import { routesToDisplay } from "./routes";
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <>
             <Navbar />
 
             <Routes>
-                {routes.map((route) => (
+                {routesToDisplay.map((route) => (
                     <Route
                         key={route.path}
                         path={route.path}
@@ -19,6 +19,6 @@ export default function App() {
             </Routes>
 
             <Footer />
-        </BrowserRouter>
+        </>
     );
 }
