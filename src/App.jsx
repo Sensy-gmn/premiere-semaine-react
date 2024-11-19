@@ -1,15 +1,24 @@
-import Card from "./Components/Card";
-import Title from "./Components/Templates/Title";
-import ThemeSwitcher from "./Components/ThemeSwitcher";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import { routes } from "./routes";
 
-function App() {
+export default function App() {
     return (
-        <div className="container mx-auto">
-            <Title title="hello" />
-            <Card />
-            <ThemeSwitcher />
-        </div>
+        <BrowserRouter>
+            <Navbar />
+
+            <Routes>
+                {routes.map((route) => (
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        element={route.element}
+                    />
+                ))}
+            </Routes>
+
+            <Footer />
+        </BrowserRouter>
     );
 }
-
-export default App;
