@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import { routesToDisplay } from "./routes";
+import { routesNotDisplayed, routesToDisplay } from "./routes";
 
 export default function App() {
     return (
@@ -10,6 +10,14 @@ export default function App() {
 
             <Routes>
                 {routesToDisplay.map((route) => (
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        element={route.element}
+                    />
+                ))}
+
+                {routesNotDisplayed.map((route) => (
                     <Route
                         key={route.path}
                         path={route.path}

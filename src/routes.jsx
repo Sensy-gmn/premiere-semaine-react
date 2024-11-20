@@ -1,3 +1,4 @@
+import PostDetails from "./Components/PostDetails";
 import About from "./Features/About";
 import Api from "./Features/Api";
 import Contact from "./Features/Contact";
@@ -11,4 +12,7 @@ export const routesToDisplay = [
     { path: "/api", element: <Api />, name: "Api" },
 ];
 
-export const routesNotDisplayed = [{ path: "*", element: <NotFound /> }];
+export const routesNotDisplayed = [
+    { path: "*", element: <NotFound /> },
+    { path: "/api/post/:id", element: <PostDetails />, name: "PostDetails" },
+];
