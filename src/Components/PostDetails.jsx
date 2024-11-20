@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { postUrl } from "../utils/links";
 
 export default function PostDetails() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const { id } = useParams();
 
-    const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
+    const url = `${postUrl}/${id}`;
 
     const fetchData = () => {
         setIsLoading(true);
